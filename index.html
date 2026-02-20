@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <style>
   :root{--sand:#F5EFE4;--ocean:#1A4A5C;--seafoam:#4A8FA8;--coral:#E8714A;--light:#FDFAF5;--text:#1C2B32;--muted:#6B8490}
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
   body{font-family:'DM Sans',sans-serif;background:var(--light);color:var(--text);overflow-x:hidden}
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(253,250,245,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,74,92,0.08)}
   .logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--ocean);letter-spacing:-0.02em}
@@ -78,7 +77,6 @@
   .submit-btn{width:100%;padding:1rem;background:var(--coral);color:white;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(232,113,74,0.3);margin-top:0.5rem}
   .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,113,74,0.4)}
   .form-note{font-size:0.78rem;color:var(--muted);margin-top:1rem}
-  .success-msg{display:none;background:rgba(74,143,168,0.1);border:1.5px solid var(--seafoam);border-radius:12px;padding:1.5rem;color:var(--ocean);font-size:0.95rem;line-height:1.6;margin-top:1rem}
   footer{padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(26,74,92,0.08)}
   footer .logo{font-size:1.1rem}
   footer p{font-size:0.8rem;color:var(--muted)}
@@ -136,35 +134,34 @@
   <h2 class="section-title">Bra för alla</h2>
   <p class="section-sub">Oavsett om du äger en parkeringsplats i Marstrand eller ska besöka ön – vi gör sommaren lite enklare.</p>
   <div class="benefits-grid">
-    <div class="benefit-card"><span class="benefit-tag tag-owner">För dig som hyr ut</span><div class="benefit-icon">🏡</div><h3>Tjäna pengar på det du inte använder</h3><p>Din förhyrda p-plats kostar pengar varje månad. Med Marstrandsparkering.se kan du få tillbaka en del – eller mer.</p></div>
-    <div class="benefit-card"><span class="benefit-tag tag-owner">För dig som hyr ut</span><div class="benefit-icon">🔒</div><h3>Du bestämmer alltid</h3><p>Du väljer själv vilka dagar platsen är tillgänglig. Blockera med ett knapptryck – resten sköts automatiskt.</p></div>
+    <div class="benefit-card"><span class="benefit-tag tag-owner">För dig som hyr ut</span><div class="benefit-icon">🏡</div><h3>Tjäna pengar på det du inte använder</h3><p>Din förhyrda p-plats kostar pengar varje månad. Med Marstrandsparkering.se kan du få tillbaka en del av den kostnaden – eller mer.</p></div>
+    <div class="benefit-card"><span class="benefit-tag tag-owner">För dig som hyr ut</span><div class="benefit-icon">🔒</div><h3>Du bestämmer alltid</h3><p>Du väljer själv vilka dagar platsen är tillgänglig. Blockera dagarna med ett knapptryck – resten sköts automatiskt.</p></div>
     <div class="benefit-card"><span class="benefit-tag tag-visitor">För dig som söker parkering</span><div class="benefit-icon">🗺️</div><h3>Sluta cirkla runt</h3><p>Boka en garanterad plats nära dit du ska, redan innan du åker hemifrån. Inga överraskningar, ingen stress.</p></div>
-    <div class="benefit-card"><span class="benefit-tag tag-visitor">För dig som söker parkering</span><div class="benefit-icon">💳</div><h3>Enkelt och tryggt</h3><p>Betala direkt i appen. Du vet exakt var du ska parkera och har alltid en bokningsbekräftelse.</p></div>
+    <div class="benefit-card"><span class="benefit-tag tag-visitor">För dig som söker parkering</span><div class="benefit-icon">💳</div><h3>Enkelt och tryggt</h3><p>Betala direkt i appen. Du vet exakt var du ska parkera och vad det kostar.</p></div>
   </div>
 </section>
 <section class="signup-section" id="anmal">
   <div class="signup-inner">
     <div class="section-label" style="text-align:center">Kom med från start</div>
     <h2 class="section-title">Anmäl ditt intresse</h2>
-    <p class="section-sub">Vi lanserar inför sommaren 2026. Fyll i formuläret så hör vi av oss.</p>
-    <form id="signupForm">
+    <p class="section-sub">Vi lanserar Marstrandsparkering.se inför sommaren 2026. Fyll i formuläret så hör vi av oss.</p>
+    <form action="https://formspree.io/f/jesper@speedshine.se" method="POST">
       <div class="form-row">
-        <div class="form-group"><input type="text" placeholder="Ditt namn" required></div>
-        <div class="form-group"><input type="email" placeholder="E-postadress" required></div>
+        <div class="form-group"><input type="text" name="namn" placeholder="Ditt namn" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="E-postadress" required></div>
       </div>
       <div class="form-group">
-        <select required>
+        <select name="intresse" required>
           <option value="" disabled selected>Jag är intresserad av att...</option>
-          <option value="owner">Hyra ut min parkeringsplats</option>
-          <option value="visitor">Boka parkering som besökare</option>
-          <option value="both">Båda delar</option>
+          <option value="hyra-ut">Hyra ut min parkeringsplats</option>
+          <option value="boka">Boka parkering som besökare</option>
+          <option value="bada">Båda delar</option>
         </select>
       </div>
-      <div class="form-group"><input type="text" placeholder="Var ligger din parkeringsplats?"></div>
+      <div class="form-group"><input type="text" name="plats" placeholder="Var bor din parkeringsplats? (t.ex. nära hamnen...)"></div>
       <button type="submit" class="submit-btn">Anmäl intresse →</button>
       <p class="form-note">Vi skickar inga spam. Bara ett mejl när vi är redo att lansera.</p>
     </form>
-    <div class="success-msg" id="successMsg">🎉 Tack! Vi hör av oss inför sommarsäsongen 2026.</div>
   </div>
 </section>
 <footer>
@@ -175,11 +172,10 @@
 <script>
   const map = L.map('marstrand-map',{center:[57.8875,11.5900],zoom:14,zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
-  const parkingIcon=L.divIcon({html:'<div style="background:#E8714A;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;">P</div>',className:'',iconSize:[28,28],iconAnchor:[14,14]});
-  [[57.8882,11.5908],[57.8868,11.5921],[57.8875,11.5888],[57.8890,11.5875],[57.8860,11.5895]].forEach(pos=>L.marker(pos,{icon:parkingIcon}).addTo(map));
-  document.getElementById('signupForm').addEventListener('submit',function(e){e.preventDefault();this.style.display='none';document.getElementById('successMsg').style.display='block';});
-  const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.style.opacity='1';entry.target.style.transform='translateY(0)';}});},{threshold:0.1});
-  document.querySelectorAll('.step,.benefit-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';observer.observe(el);});
+  const icon=L.divIcon({html:'<div style="background:#E8714A;color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid white;">P</div>',className:'',iconSize:[28,28],iconAnchor:[14,14]});
+  [[57.8882,11.5908],[57.8868,11.5921],[57.8875,11.5888],[57.8890,11.5875],[57.8860,11.5895]].forEach(p=>L.marker(p,{icon}).addTo(map));
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.1});
+  document.querySelectorAll('.step,.benefit-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el)});
 </script>
 </body>
 </html>
